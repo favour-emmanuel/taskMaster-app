@@ -45,7 +45,7 @@ body {
 }
 
 #logout-button {
-  padding: 0.5rem 1rem;
+  padding: 0.68rem 1rem;
   background-color: var(--priority-high);
   color: var(--text-light);
   border: none;
@@ -54,6 +54,9 @@ body {
   font-size: 1rem;
   font-weight: 600;
   transition: all var(--transition-speed) ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 #logout-button:hover {
@@ -62,8 +65,8 @@ body {
 }
 
 h1 {
-  color: var(--accent-primary);
-  font-size: 2rem;
+  color: var(--text-primary);
+  font-size: 1.7rem;
   text-transform: uppercase;
   letter-spacing: -1px;
   text-align: center;
@@ -71,7 +74,7 @@ h1 {
 
 h2 {
   color: var(--accent-primary);
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   text-align: center;
   margin-bottom: 1.5rem;
 }
@@ -224,6 +227,9 @@ h2 {
   font-size: 0.9rem;
   font-weight: 600;
   transition: all var(--transition-speed) ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .task-actions button:first-child {
@@ -248,6 +254,39 @@ h2 {
   margin-top: 2rem;
 }
 
+/* register */
+
+.register-container {
+  max-width: 400px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: var(--bg-darker);
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--accent-border);
+}
+.register-container h1 {
+  font-size: 1.8rem;
+  color: var(--accent-primary);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.register-container p {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.register-container a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--transition-speed) ease;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .search-and-filter {
@@ -262,7 +301,7 @@ h2 {
 
 @media (max-width: 480px) {
   h1 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   h2 {
@@ -272,7 +311,7 @@ h2 {
 /* Login Page Styles */
 .login-container {
   max-width: 400px;
-  margin: 5rem auto;
+  margin: 6rem auto;
   padding: 2rem;
   background-color: var(--bg-darker);
   border-radius: 12px;
@@ -282,10 +321,11 @@ h2 {
 }
 
 .login-container h1 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--accent-primary);
   margin-bottom: 1.5rem;
   font-weight: 700;
+  text-transform: capitalize;
 }
 
 #login-form {
@@ -348,6 +388,9 @@ h2 {
 }
 
 @media (max-width: 480px) {
+  h1 {
+    text-align: left;
+  }
   .login-container {
     padding: 1.5rem;
   }
