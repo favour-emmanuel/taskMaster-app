@@ -44,6 +44,18 @@ body {
   margin-bottom: 2rem;
 }
 
+.update-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.update-header h3 {
+  color: var(--accent-primary);
+  font-size: 1.7rem;
+}
+
 #logout-button {
   padding: 0.68rem 1rem;
   background-color: var(--priority-high);

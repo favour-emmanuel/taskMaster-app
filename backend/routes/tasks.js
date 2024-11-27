@@ -5,6 +5,23 @@ import Task from "../models/Task.js";
 
 const router = express.Router();
 
+// Search tasks
+router.get("/search", auth, async (req, res) => {
+  try {
+    const { keyword } = req.query;
+    const tasks = await Task.find({
+      user: req.userId,
+      $or: [
+        { title: { $regex: keyword, $options: "i" } },
+        { description: { $regex: keyword, $options: "i" } },
+      ],
+    });
+    res.json(tasks);
+  } catch (error) {
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
 // Get all tasks for a user with optional filtering
 router.get("/", auth, async (req, res) => {
   try {
@@ -95,23 +112,6 @@ router.delete("/:id", auth, async (req, res) => {
     }
 
     res.json({ message: "Task deleted successfully" });
-  } catch (error) {
-    res.status(500).json({ message: "Server error" });
-  }
-});
-
-// Search tasks
-router.get("/search", auth, async (req, res) => {
-  try {
-    const { keyword } = req.query;
-    const tasks = await Task.find({
-      user: req.userId,
-      $or: [
-        { title: { $regex: keyword, $options: "i" } },
-        { description: { $regex: keyword, $options: "i" } },
-      ],
-    });
-    res.json(tasks);
   } catch (error) {
     res.status(500).json({ message: "Server error" });
   }
