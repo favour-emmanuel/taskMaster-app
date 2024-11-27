@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Task - TaskMaster</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="task-form-container">
+      <div class="dashboard-header">
+        <h1>TaskMaster Dashboard</h1>
+        <button id="logout-button">Logout</button>
+      </div>
+      <h1>Update Task</h1>
+      <form id="edit-task-form">
+        <input type="hidden" id="task-id" />
+        <input type="text" id="task-title" placeholder="Task Title" required />
+        <textarea
+          id="task-desc"
+          placeholder="Task Description"
+          required
+        ></textarea>
+        <input type="date" id="task-deadline" required />
+        <select id="task-priority">
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+        <button type="submit">Update Task</button>
+      </form>
+    </div>
+
+    <script src="js/edit-task.js"></script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - TaskMaster</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <div class="dashboard-header">
+        <h1>TaskMaster Dashboard</h1>
+        <button id="logout-button">Logout</button>
+      </div>
+      
+      <!-- Task Creation Form -->
+      <div class="task-form-container">
+        <h2>Create a New Task</h2>
+        <form id="task-form">
+          <input type="text" id="task-title" placeholder="Task Title" required />
+          <textarea
+            id="task-desc"
+            placeholder="Task Description"
+            required
+          ></textarea>
+          <input type="date" id="task-deadline" required />
+          <select id="task-priority">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+          <button type="submit">Save Task</button>
+        </form>
+      </div>
+      <div class="search-and-filter">
+        <!-- Search Bar -->
+        <div class="search-bar">
+          <label for="priority-filter">Search Task:</label>
+
+          <input 
+            type="text" 
+            id="search-bar" 
+            placeholder="Search tasks..." 
+            oninput="searchTasks()"
+          />
+        </div>
+      
+        <!-- Priority Filter -->
+        <div class="filter">
+          <label for="priority-filter">Filter by Priority:</label>
+          <select id="priority-filter" onchange="filterTasks()">
+            <option value="">All</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+      </div>
+      
+   
+
+      <!-- Task List -->
+      <div class="task-list" id="task-list">
+      </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+    <script src="js/task-form.js"></script>
+  </body>
+</html>
