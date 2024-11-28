@@ -12,5 +12,9 @@
       "src": "/(.*)",
       "dest": "backend/server.js"
     }
-  ]
+  ],
+
+  "env": {
+    "MONGODB_URI": "@MONGODB_URI"
+  }
 }
